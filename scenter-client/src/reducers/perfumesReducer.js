@@ -1,6 +1,8 @@
-export default (state = [], action) => {
-  switch (action.type) {
-    default:
-      return state
+export default function perfumesReducer(state = {perfumes: []}, action) {
+  switch (action.type){
+    case 'FETCH_PERFUMES':
+      return {perfumes: action.payload}
+  default:
+    return state    
   }
 }

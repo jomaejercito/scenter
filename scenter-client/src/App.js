@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { connect } from 'react-redux';
+import { fetchPerfumes } from './actions/index'
 
 class App extends React.Component {
   
@@ -20,4 +22,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// const mapStateToProps = (state) => {
+//   return {
+//     perfumes: state.perfumes
+//   }
+// }
+
+export default connect(null, {fetchPerfumes})(App);
