@@ -1,9 +1,10 @@
 class Api::V1::CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :set_perfume, only: [:index, :create]
 
   # GET /comments
   def index
-    @comments = Comment.all
+    @comments = @perfume.comments
 
     render json: @comments
   end
@@ -42,6 +43,10 @@ class Api::V1::CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
+    end
+
+    def set_perfume
+      @perfume = Perfume.find_by(id: params[:perfume_id])
     end
 
     # Only allow a trusted parameter "white list" through.
