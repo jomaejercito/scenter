@@ -1,4 +1,4 @@
-class PerfumesController < ApplicationController
+class Api::V1::PerfumesController < ApplicationController
   before_action :set_perfume, only: [:show, :update, :destroy]
 
   # GET /perfumes
