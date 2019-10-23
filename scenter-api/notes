@@ -1,0 +1,32 @@
+##OVERVIEW
+This is an app that allows users to look up luxury frangraces and leave comments and likes.
+
+##USER STORIES
+Users should be able to...
+- Search for fragrances
+- See the details of fragrances
+- "like" perfumes
+  - user can only "like" each fragrance once
+- Leave a comment/review of the fragrance
+- Look at different perfume brands and see their fragrances
+
+##STRETCH GOALS
+- Add "dislike" button
+
+##MODELS
+
+##PERFUMES 
+###Attributes
+name::string
+image_url::string
+likes::integer
+
+
+###Relationships
+has_many :comments
+
+
+##COMMENTS
+###Attributes
+review::string
+reviewer::string
