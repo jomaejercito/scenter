@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
-import { connect } from 'react-redux';
-import { fetchPerfumes } from './actions/index'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import PerfumesContainer from './containers/PerfumesContainer';
 
 class App extends React.Component {
   
@@ -15,17 +17,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        App
-      </div>
+      <Router>
+        <div className="App">
+        <NavBar />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/perfumes" component={PerfumesContainer} />
+        </div>
+      </Router>
     )
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     perfumes: state.perfumes
-//   }
-// }
 
-export default connect(null, {fetchPerfumes})(App);
+export default App;

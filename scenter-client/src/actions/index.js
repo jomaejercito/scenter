@@ -1,6 +1,6 @@
 const API_URL = 'http://localhost:3001/api/v1'
 
-export function fetchPerfumes() {
+export function fetchPerfumes(action) {
   return(dispatch) => {
     fetch(`${API_URL}/perfumes/`)
     .then (response => response.json())
