@@ -1,20 +1,69 @@
 .App {
-  font-family: 'Roboto'
+  font-family: 'Optima'
 }
 
 
 /* NAVBAR */
 .navbar-logo {
   font-family: 'Century Gothic';
-  font-size: 2em;
+  font-size: 2.3em;
   font-weight: bold;
 }
 
 .navbar-link {
-  font-family: 'Roboto';
-  font-size:  1em;
+  font-family: 'Optima';
+  font-size:  1.2em;
+  font-weight: bold;
 }
 
 /* HOME PAGE */
+.home {
+  background-image: url(./wallpaper.jpg);
+  background-position: center;
+  height: 100vh;
+}
 
+.home-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.home-logo {
+  font-family: 'Century Gothic';
+  font-size: 5em;
+  font-weight: bold;
+  color: #D6D6D6;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.home-subheader {
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  padding-bottom: 30px;
+}
+
+.btn {
+  width: 400px;
+  position: absolute;
+}
+
+/* PERFUME CARD */
+.perfume-card {
+  width: 300px;
+  padding: 15px;
+  border: 1px solid #0c3d59;
+  background-color: white;
+}
+
+.perfume-name {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: 'Optima', sans-serif;
+  font-weight: bold;
+  color: #0c3d59;
+}

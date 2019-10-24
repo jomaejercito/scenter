@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div style={{ background: '#2f3752', paddingTop: '12px', paddingBottom: '12px' }}>
+    <div style={{ background: '#0c3d59', paddingTop: '12px', paddingBottom: '12px' }}>
 
-      <NavLink to="/" className="navbar-logo" style={{padding: '12px', margin: '0 8px 8px', color: 'white'}}>
+      <NavLink to="/" className="navbar-logo" style={{padding: '40px', margin: '0 8px 8px', color: 'white'}}>
         Scenter
       </NavLink>
 
@@ -22,8 +22,8 @@ const NavBar = () => {
 
 const link = {
   width: '100px',
-  padding: '12px',
-  margin: '0 6px 6px',
+  padding: '15px',
+  margin: '0 8px 8px',
   textDecoration: 'none',
   color: 'white',
 }

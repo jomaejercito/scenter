@@ -6,13 +6,15 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Scenter</h1>
-      <h3>A Luxury Fragrance Database</h3>
-      <Link to="/perfumes">
-        <Button className="btn btn-dark">
-          See Perfumes
-        </Button>
-      </Link>
+      <div className="home-center">
+        <h1 className="home-logo">Scenter</h1>
+        <h3 className="home-subheader">A Luxury Fragrance Database</h3>
+        <Link to="/perfumes">
+          <Button className="btn btn-dark">
+            See Perfumes
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
