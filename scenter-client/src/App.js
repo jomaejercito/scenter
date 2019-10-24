@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import PerfumesContainer from './containers/PerfumesContainer';
+import PerfumeShow from './containers/PerfumeShow';
 
 class App extends React.Component {
   
@@ -22,6 +23,7 @@ class App extends React.Component {
         <NavBar />
           <Route exact path="/" component={Home} />
           <Route exact path="/perfumes" component={PerfumesContainer} />
+          <Route exact path="/perfumes/:perfumeId" component={PerfumeShow} />
         </div>
       </Router>
     )

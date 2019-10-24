@@ -5,6 +5,10 @@ export default function perfumesReducer(state = {perfumes: []}, action) {
 
     case 'FETCH_PERFUMES':
       return {perfumes: action.perfumes}
+
+    case 'FETCH_PERFUME':
+      return {perfume: action.perfume}
+
   default:
     return state    
   }
