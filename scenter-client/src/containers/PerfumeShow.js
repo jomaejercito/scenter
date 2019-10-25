@@ -20,8 +20,10 @@ class PerfumeShow extends React.Component {
     
     return (
       <div className="perfume-show">
-        <h3 className="perfume-name">{perfume.name}</h3>
-        <img src={perfume.image} alt="pic" />
+        <h3 className="perfume-show-title">{perfume.name}</h3>
+        <div className="perfume-show-image">
+          <img src={perfume.image} alt="pic" />
+        </div>
       </div>
     )
   }

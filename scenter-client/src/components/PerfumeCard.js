@@ -8,7 +8,7 @@ class PerfumeCard extends React.Component {
     return (
       <div className="perfume-card">
         <div className="container-fluid text-center">
-          <img src={perfume.image} width="170" height="200" alt="pic" />
+          <img src={perfume.image} width="170" height="220" alt="pic" />
           <h4 className="perfume-name"><Link key={perfume.id} to={`/perfumes/${perfume.id}`}>{this.props.perfume.name}</Link></h4>
         </div>
       </div>
