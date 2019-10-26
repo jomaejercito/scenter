@@ -1,8 +1,7 @@
 import React from 'react';
 import PerfumeCard from './PerfumeCard';
 
-
-const PerfumeList = ({ perfumes }) => {
+const PerfumesList = ({ perfumes }) => {
   
     const renderPerfumes = perfumes.map(perfume =>
        <PerfumeCard key={perfume.id} perfume={perfume} />
@@ -18,4 +17,4 @@ const PerfumeList = ({ perfumes }) => {
   
   }
   
-  export default PerfumeList;
+  export default PerfumesList;

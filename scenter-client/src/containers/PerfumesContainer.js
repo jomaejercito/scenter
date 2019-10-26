@@ -1,5 +1,5 @@
 import React from 'react';
-import PerfumeList from '../components/PerfumeList';
+import PerfumesList from '../components/PerfumesList';
 import { connect } from 'react-redux';
 import { fetchPerfumes } from '../actions';
 
@@ -13,7 +13,7 @@ class PerfumesContainer extends React.Component {
 
     return (
       <div>
-        <PerfumeList perfumes={perfumes} />
+        <PerfumesList perfumes={perfumes} />
       </div>
     )
   }
