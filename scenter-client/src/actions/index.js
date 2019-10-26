@@ -25,7 +25,7 @@ const setComments = comments => {
 
 export const fetchComments = (perfumeId) => {
   return dispatch => {
-    return fetch(`${API_URL}/comments/${perfumeId}/comments/`)
+    return fetch(`${API_URL}/comments/${perfumeId}/comment/`)
     .then(response => response.json())
     .then(comments => dispatch(setComments(comments)))
     .catch(error => console.log(error))
