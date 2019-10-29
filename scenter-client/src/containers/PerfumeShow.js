@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPerfumes } from '../actions';
 import CommentsList from '../components/CommentsList';
-import { fetchComments } from '../actions';
+import { fetchComments, fetchPerfume } from '../actions';
+
 
 class PerfumeShow extends React.Component {
   
@@ -14,13 +14,18 @@ class PerfumeShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPerfumes();
-    this.props.fetchComments();
+    const { perfumeId } = this.props.match.params
+      if (perfumeId != null) {
+        this.props.fetchPerfume(perfumeId).then(perfume =>{
+          this.setState({ perfume })
+        })
+        this.props.fetchComments(perfumeId);
+      }
   }
 
   render() {
-    const { perfume, comments } = this.props;
-    
+    const {  comments } = this.props;
+    const { perfume } = this.state;
     return (
       <div className="perfume-show">
         <h3 className="perfume-show-title">{perfume.name}</h3>
@@ -43,4 +48,4 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchPerfumes, fetchComments })(PerfumeShow);
+export default connect(mapStateToProps, { fetchPerfume, fetchComments, })(PerfumeShow);

@@ -1,9 +1,12 @@
 import React from 'react';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
-const CommentShow = () => {
+const CommentShow = ({ comment }) => {
   return (
-    <div>
-      CommentShow
+    <div className="list-group">
+      <ListGroup>
+        <ListGroupItem>{comment.comment} <br></br> - {comment.commenter}</ListGroupItem>
+      </ListGroup>
     </div>
   )
 }
