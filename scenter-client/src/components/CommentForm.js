@@ -11,7 +11,7 @@ class CommentForm extends React.Component {
     this.state = {
       remark: '',
       commenter: '',
-      perfumeId: this.props.perfumeId
+      perfume_id: this.props.perfumeId
     }
   }
 

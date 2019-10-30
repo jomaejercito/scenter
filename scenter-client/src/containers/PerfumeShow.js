@@ -35,7 +35,7 @@ class PerfumeShow extends React.Component {
         </div>
         <div className="comments">
           <CommentsList comments={comments} />
-          <CommentForm />
+          <CommentForm perfumeId={this.props.match.params.perfumeId}/>
         </div>
       </div>
     )
@@ -50,4 +50,4 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchPerfume, fetchComments, })(PerfumeShow);
+export default connect(mapStateToProps, { fetchPerfume, fetchComments })(PerfumeShow);
