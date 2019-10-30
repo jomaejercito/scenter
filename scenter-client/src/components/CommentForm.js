@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { FormControl, FormGroup } from 'react-bootstrap';
-import { addComment } from '../actions';
+import { createComment } from '../actions';
 
 class CommentForm extends React.Component {
 
@@ -9,7 +9,7 @@ class CommentForm extends React.Component {
     super(props);
 
     this.state = {
-      remark: '' ,
+      remark: '',
       commenter: '',
       perfumeId: this.props.perfumeId
     }
@@ -23,7 +23,7 @@ class CommentForm extends React.Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addComment(this.state);
+    this.props.createComment(this.state);
     this.setState({
       remark: '',
       commenter: ''
@@ -63,4 +63,4 @@ class CommentForm extends React.Component {
 
 }
 
-export default connect(null, { addComment })(CommentForm)
+export default connect(null, { createComment })(CommentForm)

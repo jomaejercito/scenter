@@ -39,18 +39,24 @@ export const fetchComments = (perfumeId) => {
   }
 }
 
-export const addComment = (perfumeId) => {
+const addComment = comment => {
+  return {
+    type: 'ADD_COMMENT',
+    comment
+  }
+}
+
+export const createComment = (comment) => {
   return dispatch => {
-    fetch(`${API_URL}/perfumes/${perfumeId}/comments/`, {
+    fetch(`${API_URL}/perfumes/${comment.perfumeId}/comments/`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify(perfumeId)
+      body: JSON.stringify(comment)
     })
     .then(response => response.json())
-    .then(comment => dispatch({type: 'ADD_COMMENT', payload: comment}))
+    .then(comment => dispatch(addComment(comment)))
   }
-
 }
