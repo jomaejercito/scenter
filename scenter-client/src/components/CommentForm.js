@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { FormControl, FormGroup } from 'react-bootstrap';
-// import { createComment } from '../actions';
+import { addComment } from '../actions';
 
 class CommentForm extends React.Component {
 
@@ -8,26 +9,48 @@ class CommentForm extends React.Component {
     super(props);
 
     this.state = {
-
+      comment: '' ,
+      commenter: '',
+      perfumeId: this.props.perfumeId
     }
   }
+
+  handleOnChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleOnSubmit = event => {
+    event.preventDefault();
+    this.props.addComment(this.state);
+    this.setState({
+      comment: '',
+      commenter: ''
+    })
+  }
+
 
   render(){
     return (
       <div className="comment-form">
         <p>Add Comment:</p>
-          <form>
+          <form onSubmit={this.handleOnSubmit}>
             <FormGroup>
               <label>Comment:</label>
               <FormControl
                 type="text"
                 name="comment"
+                value={this.state.comment}
+                onChange={this.handleOnChange}
               />
 
               <label>Name:</label>
               <FormControl
                 type="text"
                 name="commenter"
+                value={this.state.commenter}
+                onChange={this.handleOnChange}
               />
               <br></br>
 
@@ -40,5 +63,4 @@ class CommentForm extends React.Component {
 
 }
 
-// export default connect(null, { createComment })(CommentForm)
-export default CommentForm;
+export default connect(null, { addComment })(CommentForm)
