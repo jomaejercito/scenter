@@ -5,7 +5,7 @@ const CommentShow = ({ comment }) => {
   return (
     <div className="list-group">
       <ListGroup>
-        <ListGroupItem>{comment.comment} <br></br> - {comment.commenter}</ListGroupItem><br></br>
+        <ListGroupItem>{comment.remark} <br></br> - {comment.commenter}</ListGroupItem><br></br>
       </ListGroup>
     </div>
   )

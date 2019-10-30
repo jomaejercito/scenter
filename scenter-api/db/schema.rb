@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2) do
 
   create_table "comments", force: :cascade do |t|
-    t.string "comment"
+    t.string "remark"
     t.string "commenter"
     t.integer "perfume_id"
     t.datetime "created_at", precision: 6, null: false

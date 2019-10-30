@@ -9,7 +9,7 @@ class CommentForm extends React.Component {
     super(props);
 
     this.state = {
-      comment: '' ,
+      remark: '' ,
       commenter: '',
       perfumeId: this.props.perfumeId
     }
@@ -25,7 +25,7 @@ class CommentForm extends React.Component {
     event.preventDefault();
     this.props.addComment(this.state);
     this.setState({
-      comment: '',
+      remark: '',
       commenter: ''
     })
   }
@@ -40,8 +40,8 @@ class CommentForm extends React.Component {
               <label>Comment:</label>
               <FormControl
                 type="text"
-                name="comment"
-                value={this.state.comment}
+                name="remark"
+                value={this.state.remark}
                 onChange={this.handleOnChange}
               />
 
