@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import CommentsList from '../components/CommentsList';
 import CommentForm from '../components/CommentForm';
 import { fetchComments, fetchPerfume, likePerfume } from '../actions';
-import { Button } from 'react-bootstrap';
+import LikePerfumeButton from '../components/LikePerfumeButton'
 
 class PerfumeShow extends React.Component {
   
@@ -40,11 +40,7 @@ class PerfumeShow extends React.Component {
 
         <div className="like-button">
           <br></br><br></br>
-          <Button
-            className="btn btn-dark"
-            onClick={this.props.likePerfume}>
-            Click to Like this perfume {this.props.perfume.likes}
-          </Button>
+          <LikePerfumeButton perfume={perfume} likePerfume={this.handleOnClick} />
         </div>
 
         <div className="comments">

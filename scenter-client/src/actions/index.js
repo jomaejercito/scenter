@@ -69,15 +69,16 @@ const addLikesToPerfume = (perfume) => {
   }
 }
 
-export const likePerfume = (perfumeId) => {
+export const likePerfume = (perfume) => {
+  const likedPerfume = Object.assign(perfume, { likes: perfume.likes + 1 })
   return dispatch => {
-    fetch(`${API_URL}/perfumes/${perfumeId}/`, {
+    fetch(`${API_URL}/perfumes/${perfume.id}/`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify(perfumeId)
+      body: JSON.stringify(likedPerfume)
     })
     .then(response => response.json())
     .then(perfume => dispatch(addLikesToPerfume(perfume)))
