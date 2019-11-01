@@ -48,7 +48,7 @@ const addComment = comment => {
 
 export const createComment = (comment) => {
   return dispatch => {
-    fetch(`${API_URL}/perfumes/${comment.perfumeId}/comments/`, {
+    fetch(`${API_URL}/perfumes/${comment.perfume_id}/comments/`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -58,5 +58,6 @@ export const createComment = (comment) => {
     })
     .then(response => response.json())
     .then(comment => dispatch(addComment(comment)))
+    .catch(error => console.log(error))
   }
 }
