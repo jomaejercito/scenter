@@ -61,3 +61,26 @@ export const createComment = (comment) => {
     .catch(error => console.log(error))
   }
 }
+
+const addLikesToPerfume = (perfume) => {
+  return {
+    type: 'LIKE_PERFUME',
+    perfume
+  }
+}
+
+export const likePerfume = (perfumeId) => {
+  return dispatch => {
+    fetch(`${API_URL}/perfumes/${perfumeId}/`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(perfumeId)
+    })
+    .then(response => response.json())
+    .then(perfume => dispatch(addLikesToPerfume(perfume)))
+    .catch(error => console.log(error))
+  }
+}

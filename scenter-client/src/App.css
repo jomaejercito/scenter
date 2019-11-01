@@ -87,9 +87,16 @@
 }
 
 /* COMMENTS */
-
 .comments {
   margin-top: 20px;
   padding-left: 12px;
   padding-right: 12px;
+}
+
+/* LIKE BUTTON */
+.like-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
 }

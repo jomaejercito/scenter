@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CommentsList from '../components/CommentsList';
 import CommentForm from '../components/CommentForm';
-import { fetchComments, fetchPerfume } from '../actions';
-
+import { fetchComments, fetchPerfume, likePerfume } from '../actions';
+import { Button } from 'react-bootstrap';
 
 class PerfumeShow extends React.Component {
   
@@ -12,6 +12,10 @@ class PerfumeShow extends React.Component {
     this.state = {
       perfume: {}
     }
+  }
+
+  handleOnClick = () => {
+    this.props.likePerfume(this.props.perfume)
   }
 
   componentDidMount() {
@@ -33,8 +37,20 @@ class PerfumeShow extends React.Component {
         <div className="perfume-show-image">
           <img src={perfume.image} alt="pic" />
         </div>
+
+        <div className="like-button">
+          <br></br><br></br>
+          <Button
+            className="btn btn-dark"
+            onClick={this.props.likePerfume}>
+            Click to Like this perfume {this.props.perfume.likes}
+          </Button>
+        </div>
+
         <div className="comments">
+          <br></br><br></br><br></br>
           <CommentsList comments={comments} />
+          <br></br><br></br>
           <CommentForm perfumeId={this.props.match.params.perfumeId}/>
         </div>
       </div>
@@ -50,4 +66,4 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchPerfume, fetchComments })(PerfumeShow);
+export default connect(mapStateToProps, { fetchPerfume, fetchComments, likePerfume })(PerfumeShow);
