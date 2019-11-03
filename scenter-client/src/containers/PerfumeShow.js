@@ -15,7 +15,7 @@ class PerfumeShow extends React.Component {
   }
 
   handleOnClick = () => {
-    this.props.likePerfume(this.props.perfume)
+    this.props.likePerfume(this.state.perfume)
   }
 
   componentDidMount() {

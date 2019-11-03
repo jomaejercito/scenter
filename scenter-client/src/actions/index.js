@@ -77,7 +77,7 @@ export const likePerfume = (perfume) => {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      method: 'POST',
+      method: 'PUT',
       body: JSON.stringify(likedPerfume)
     })
     .then(response => response.json())
