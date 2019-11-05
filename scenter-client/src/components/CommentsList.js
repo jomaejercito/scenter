@@ -11,7 +11,7 @@ const CommentsList = ({ comments }) => {
 
   return (
     <div className="comments">
-      <p>Comments:</p>
+      <h3>Comments:</h3>
       <ListGroup>
         {renderComments}
       </ListGroup>

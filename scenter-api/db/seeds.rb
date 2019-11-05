@@ -119,11 +119,15 @@ Perfume.create(name: "Odin 10 Roam", image: "https://fimgs.net/mdimg/perfume/375
 Perfume.create(name: "Odin 11 Semma", image: "https://fimgs.net/mdimg/perfume/375x500.21772.jpg", likes: 1)
 Perfume.create(name: "Odin 12 Lacha", image: "https://fimgs.net/mdimg/perfume/375x500.31895.jpg", likes: 1)
 
+
 Comment.create(remark: "Disgusting. When I put it on, I smell like a BEAST.", commenter: "Kim R.", perfume_id: 1)
 Comment.create(remark: "BEAST?! How dare you?!", commenter: "Eileen D.", perfume_id: 1)
-Comment.create(remark: "This scent makes me feel confident. Who gon' check me, boo?", commenter: "Sheree W.", perfume_id: 2)
+Comment.create(remark: "I like things that are elegant, just like me. Who gon' check me, boo?", commenter: "Sheree W.", perfume_id: 2)
 Comment.create(remark: "Stunning. This fragrance makes me feel cool, not all like, uncool.", commenter: "Countess LuAnn", perfume_id: 3)
 Comment.create(remark: "Word on the street is...this is better than La Dame by Karen for sure.", commenter: "Gizelle B.", perfume_id: 4)
 Comment.create(remark: "Fabulous! GONE WITH THE WIND FABULOUS!", commenter: "Kenya M.", perfume_id: 5)
 Comment.create(remark: "Great for any occasion! Makes me ready to whoop it up!", commenter: "Vicki G.", perfume_id: 6)
-Comment.create(remark: "Not a fan. I just delete delete delete.", commenter: "Vicki G.", perfume_id: 6)
+Comment.create(remark: "Not a fan. I just delete delete delete.", commenter: "Teresa G.", perfume_id: 6)
+Comment.create(remark: "That's hot. Do you love it?", commenter: "Paris H.", perfume_id: 55)
+Comment.create(remark: "Loves it.", commenter: "Nicole Richie", perfume_id: 55)
+Comment.create(remark: "Why it gotta be black, Saffron?", commenter: "RuPaul", perfume_id: 7)

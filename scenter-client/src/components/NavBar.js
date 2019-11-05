@@ -21,8 +21,8 @@ const NavBar = () => {
         Perfumes
       </NavLink>
 
-      <NavLink to="/top5" style={link} className="navbar-link">
-        Top 5 Perfumes
+      <NavLink to="/top" style={link} className="navbar-link">
+        Top 10 Perfumes
       </NavLink>
       </div>
   )

@@ -34,7 +34,7 @@ class CommentForm extends React.Component {
   render(){
     return (
       <div className="comment-form">
-        <p>Add Comment:</p>
+        <h4>Leave a Comment or a Review:</h4>
           <form onSubmit={this.handleOnSubmit}>
             <FormGroup>
               <label>Comment:</label>
