@@ -51,12 +51,41 @@
   position: absolute;
 }
 
+/* ABOUT PAGE */
+.about {
+  background-image: url(./wallpaper.jpg);
+  background-position: center;
+  height: 100vh;
+}
+
+.about-title {
+  font-family: 'Century Gothic';
+  font-size: 5em;
+  font-weight: bold;
+  color: #D6D6D6;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  text-align: center;
+}
+
+.about-information {
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  padding-bottom: 30px;
+}
+
 /* PERFUME CARD */
 .perfume-card {
   width: 300px;
   padding: 15px;
   border: 1px solid #0c3d59;
   background-color: white;
+}
+
+.perfumes-list {
+  width: 90%;
+  margin: auto;
 }
 
 .perfume-name {

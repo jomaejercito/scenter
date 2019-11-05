@@ -20,7 +20,7 @@ export default function perfumesReducer(state = [], action) {
       perfumes.sort((a,b) => { 
         return b.likes - a.likes 
       })
-      const topPerfumes = perfumes.slice(0, 5)
+      const topPerfumes = perfumes.slice(0, 10)
         return topPerfumes;
     }
 

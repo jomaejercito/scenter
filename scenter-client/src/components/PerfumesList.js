@@ -8,10 +8,12 @@ const PerfumesList = ({ perfumes }) => {
     );
   
       return (
-        <div className="container-fluid">
-          <div className="row">
-            {renderPerfumes}
-          </div>
+        <div className="perfumes-list">
+          <div className="container-fluid">
+            <div className="row">
+              {renderPerfumes}
+            </div>
+          </div>  
         </div>
       )
   
