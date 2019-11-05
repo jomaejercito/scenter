@@ -1,6 +1,7 @@
 const API_URL = 'http://localhost:3000/api/v1'
 
 const setPerfumes = perfumes => {
+ 
   return {
     type: 'FETCH_PERFUMES',
     perfumes
@@ -16,17 +17,33 @@ export const fetchPerfumes = () => {
   }
 }
 
-const setComments = comments => {
-  return {
-    type: 'FETCH_COMMENTS',
-    comments
-  }
-}
-
 export const fetchPerfume = (perfumeId) => {
   return dispatch => {
     return fetch(`${API_URL}/perfumes/${perfumeId}`)
     .then(response => response.json())
+  }
+}
+
+const setTopPerfumes = perfumes => {
+  return {
+    type: 'FETCH_TOP_PERFUMES',
+    perfumes
+  }
+}
+
+export const fetchTopPerfumes = () => {
+  return dispatch => {
+    return fetch(`${API_URL}/perfumes/`)
+    .then(response => response.json())
+    .then(perfumes => dispatch(setTopPerfumes(perfumes)))
+    .catch(error => console.log(error))
+  }
+}
+
+const setComments = comments => {
+  return {
+    type: 'FETCH_COMMENTS',
+    comments
   }
 }
 

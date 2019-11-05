@@ -6,6 +6,7 @@ import Home from './components/Home';
 import About from './components/About';
 import PerfumesContainer from './containers/PerfumesContainer';
 import PerfumeShow from './containers/PerfumeShow';
+import TopPerfumes from './containers/TopPerfumes';
 
 class App extends React.Component {
   
@@ -25,6 +26,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/perfumes" component={PerfumesContainer} />
+          <Route exact path="/top5" component={TopPerfumes} />
           <Route exact path="/perfumes/:perfumeId" component={PerfumeShow} />
         </div>
       </Router>

@@ -1,9 +1,10 @@
 export default function perfumesReducer(state = [], action) {
   switch (action.type) {
 
-    case 'FETCH_PERFUMES':
-      return action.perfumes;
-
+    case 'FETCH_PERFUMES':{
+      const { perfumes } = action; 
+      return perfumes;
+    }
 
     case 'LIKE_PERFUME':
       return state.map((perfume) => {
@@ -12,7 +13,17 @@ export default function perfumesReducer(state = [], action) {
         } else {
           return perfume
       }
-    })   
+    })  
+
+    case 'FETCH_TOP_PERFUMES': {
+      const { perfumes } = action;
+      perfumes.sort((a,b) => { 
+        return b.likes - a.likes 
+      })
+      const topPerfumes = perfumes.slice(0, 5)
+        return topPerfumes;
+    }
+
 
   default:
     return state    
