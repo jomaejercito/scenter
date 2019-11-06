@@ -27,18 +27,18 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   # PATCH/PUT /comments/1
-  def update
-    if @comment.update(comment_params)
-      render json: @comment
-    else
-      render json: @comment.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @comment.update(comment_params)
+  #     render json: @comment
+  #   else
+  #     render json: @comment.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /comments/1
-  def destroy
-    @comment.destroy
-  end
+  # def destroy
+  #   @comment.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

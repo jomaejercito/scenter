@@ -14,15 +14,15 @@ class Api::V1::PerfumesController < ApplicationController
   end
 
   # POST /perfumes
-  def create
-    @perfume = Perfume.new(perfume_params)
+  # def create
+  #   @perfume = Perfume.new(perfume_params)
 
-    if @perfume.save
-      render json: @perfume, status: :created, location: @perfume
-    else
-      render json: @perfume.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @perfume.save
+  #     render json: @perfume, status: :created, location: @perfume
+  #   else
+  #     render json: @perfume.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /perfumes/1
   def update
@@ -34,9 +34,9 @@ class Api::V1::PerfumesController < ApplicationController
   end
 
   # DELETE /perfumes/1
-  def destroy
-    @perfume.destroy
-  end
+  # def destroy
+  #   @perfume.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
