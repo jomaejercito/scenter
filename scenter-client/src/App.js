@@ -9,14 +9,6 @@ import PerfumeShow from './containers/PerfumeShow';
 import TopPerfumes from './containers/TopPerfumes';
 
 class App extends React.Component {
-  
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/perfumes/', {
-      method: 'GET'
-    })
-    .then (response => response.json())
-    .then(data => console.log(data))
-  }
 
   render() {
     return (

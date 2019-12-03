@@ -1,7 +1,6 @@
 const API_URL = 'http://localhost:3000/api/v1'
 
 const setPerfumes = perfumes => {
- 
   return {
     type: 'FETCH_PERFUMES',
     perfumes
@@ -9,10 +8,13 @@ const setPerfumes = perfumes => {
 }
 
 export const fetchPerfumes = () => {
+  console.log('C');
   return dispatch => {
     return fetch(`${API_URL}/perfumes/`)
     .then(response => response.json())
-    .then(perfumes => dispatch(setPerfumes(perfumes)))
+    .then(perfumes => {
+      console.log('D');
+      dispatch(setPerfumes(perfumes))})
     .catch(error => console.log(error))
   }
 }
