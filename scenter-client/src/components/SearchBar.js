@@ -1,20 +1,6 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      perfumeName: '',
-      perfume_id: this.props.perfumeId
-    }
-  }
-  
-  handleOnChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  };
 
   handleOnSubmit = (event) => {
     event.preventDefault()
@@ -31,7 +17,7 @@ class SearchBar extends React.Component {
               <input 
                 id="addInput"
                 type="text" 
-                onChange={this.handleOnChange}
+               
               />
               <button className="btn btn-dark" type="submit">Submit</button>
           </div>
