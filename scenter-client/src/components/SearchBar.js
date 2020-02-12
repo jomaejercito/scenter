@@ -17,7 +17,6 @@ class SearchBar extends React.Component {
               <input 
                 id="addInput"
                 type="text" 
-               
               />
               <button className="btn btn-dark" type="submit">Submit</button>
           </div>

@@ -8,12 +8,10 @@ const setPerfumes = perfumes => {
 }
 
 export const fetchPerfumes = () => {
-  console.log('C');
   return dispatch => {
     return fetch(`${API_URL}/perfumes/`)
     .then(response => response.json())
     .then(perfumes => {
-      console.log('D');
       dispatch(setPerfumes(perfumes))})
     .catch(error => console.log(error))
   }

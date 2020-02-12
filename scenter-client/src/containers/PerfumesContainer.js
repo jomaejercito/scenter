@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { fetchPerfumes } from '../actions';
 import SearchBar from '../components/SearchBar';
 
-
 class PerfumesContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +15,13 @@ class PerfumesContainer extends React.Component {
   componentDidMount() {
     this.props.fetchPerfumes()
   }
-  
+
+  sortReverse = () => {
+    const { searchResults } = this.state;
+    searchResults.sort((a, b) => a - b).reverse()
+    this.setState({ searchResults })
+  }
+
   render() {
     const { perfumes } = this.props
 
@@ -32,6 +37,9 @@ class PerfumesContainer extends React.Component {
           this.setState({ searchResults: newList })
         }}
         />
+        <button onClick={this.sortReverse}>
+          Click to Reverse
+        </button>
         <PerfumesList perfumes={this.state.searchResults.length > 0 ? this.state.searchResults : perfumes} />
       </div>
     )
