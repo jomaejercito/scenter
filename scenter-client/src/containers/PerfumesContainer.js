@@ -4,12 +4,16 @@ import { connect } from 'react-redux';
 import { fetchPerfumes } from '../actions';
 import SearchBar from '../components/SearchBar';
 
+
 class PerfumesContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: []
+      searchResults: [],
+      perfumesReverse: [],
+      showReverse: false
     }
+    this.sortReverse = this.sortReverse.bind(this)
   }
 
   componentDidMount() {
@@ -17,9 +21,16 @@ class PerfumesContainer extends React.Component {
   }
 
   sortReverse = () => {
-    const { searchResults } = this.state;
-    searchResults.sort((a, b) => a - b).reverse()
-    this.setState({ searchResults })
+
+    if (this.state.showReverse) {
+      return this.setState({
+        showReverse: !this.state.showReverse
+      })
+    }
+    this.setState(state => ({
+      perfumesReverse: [...this.props.perfumes].reverse(),
+      showReverse: true
+    }))
   }
 
   render() {
@@ -37,10 +48,12 @@ class PerfumesContainer extends React.Component {
           this.setState({ searchResults: newList })
         }}
         />
+
         <button onClick={this.sortReverse}>
           Click to Reverse
         </button>
-        <PerfumesList perfumes={this.state.searchResults.length > 0 ? this.state.searchResults : perfumes} />
+        
+        <PerfumesList perfumes={this.state.showReverse ? this.state.perfumesReverse : perfumes} />
       </div>
     )
   }
