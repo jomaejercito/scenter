@@ -9,28 +9,12 @@ class PerfumesContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: [],
-      perfumesReverse: [],
-      showReverse: false
+      searchResults: []
     }
-    this.sortReverse = this.sortReverse.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchPerfumes()
-  }
-
-  sortReverse = () => {
-
-    if (this.state.showReverse) {
-      return this.setState({
-        showReverse: !this.state.showReverse
-      })
-    }
-    this.setState(state => ({
-      perfumesReverse: [...this.props.perfumes].reverse(),
-      showReverse: true
-    }))
   }
 
   render() {
@@ -49,11 +33,7 @@ class PerfumesContainer extends React.Component {
         }}
         />
 
-        <button onClick={this.sortReverse}>
-          Click to Reverse
-        </button>
-        
-        <PerfumesList perfumes={this.state.showReverse ? this.state.perfumesReverse : perfumes} />
+        <PerfumesList perfumes={this.state.searchResults.length > 0 ? this.state.searchResults : perfumes} />
       </div>
     )
   }
